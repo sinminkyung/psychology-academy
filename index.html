@@ -93,4 +93,316 @@
             .title-main { font-size: 1.8em; }
             .title-sub { font-size: 1.1em; }
             .section-title { font-size: 1.4em; }
-            .hero-image { width: 200px; height: 200px; font
+            .hero-image { width: 200px; height: 200px; font-size: 60px; }
+            .main-heading { font-size: 2em; }
+            .main-subheading { font-size: 1.5em; }
+            .description { font-size: 1.05em; }
+            .course-card { padding: 28px; }
+            .course-card h3 { font-size: 1.5em; }
+            .course-card .price { font-size: 1.8em; }
+            .section-heading { font-size: 1.8em; }
+            .features-grid, .advisors-grid { grid-template-columns: 1fr; }
+            .schedule-table { font-size: 0.9em; }
+            .schedule-table th, .schedule-table td { padding: 12px 10px; }
+            .location-box { padding: 35px 25px; }
+            .location-box h3 { font-size: 1.6em; }
+            .location-box p { font-size: 1.1em; }
+            .contact-item { flex-direction: column; align-items: flex-start; }
+            .contact-icon { margin-bottom: 12px; }
+            .activity-image { height: 150px; font-size: 60px; }
+        }
+        @media (max-width: 480px) {
+            .page-left, .page-center, .page-right, .full-section { padding: 30px 20px; }
+            .logo-section { padding: 25px; }
+            .title-main { font-size: 1.5em; }
+            .section-box, .contact-section { padding: 25px; }
+            .course-card { padding: 25px; }
+            .feature-box, .advisor-box { padding: 28px; }
+            .schedule-table { font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <div class="page-left">
+            <div class="logo-section">
+                <div class="logo-circle">🧠</div>
+                <h1 class="title-main" id="orgName">휴딧심리연구소</h1>
+                <p class="title-sub" id="programName">심리아카데미 1기 모집</p>
+            </div>
+            <div class="section-box">
+                <h2 class="section-title">모집 대상</h2>
+                <ul class="info-list">
+                    <li>임상심리사, 전문상담사, 상담심리사, 청소년 상담사 등 자격증 준비자</li>
+                    <li>상담 관련 업무 종사자</li>
+                    <li>예술심리치료 자격증 준비자 및 종사자</li>
+                </ul>
+            </div>
+            <div class="section-box">
+                <h2 class="section-title">과정 안내</h2>
+                <ul class="info-list">
+                    <li><strong>기간:</strong> 2025.10.1 ~ 2026.9.30</li>
+                    <li><strong>방식:</strong> 온라인 및 오프라인</li>
+                    <li><strong>교육:</strong> 월 1회 (셋째주 토요일)</li>
+                    <li><strong>시간:</strong> 10:00~17:00</li>
+                </ul>
+            </div>
+            <p class="highlight-text">The Best Place For Learning</p>
+        </div>
+        <div class="page-center">
+            <div class="contact-section">
+                <h2>문의 정보</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-item-content">
+                        <strong>전화</strong>
+                        <span id="phoneNum">070-8838-3877</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-item-content">
+                        <strong>위치</strong>
+                        <span id="addressText">서울시 동작구 흑석동 341<br>아크로리버힐 101동 상가 34호</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-item-content">
+                        <strong>이메일</strong>
+                        <span id="emailText">hudit@hudit.co.kr</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-item-content">
+                        <strong>웹사이트</strong>
+                        <span id="websiteText">www.hudit.co.kr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image">📚</div>
+                <div class="activity-content">
+                    <h3 class="activity-title">실습 중심 교육</h3>
+                    <p class="activity-text">모의환자를 대상으로 한 체계적인 상담 실습과 다양한 심리검사 실시 경험을 제공합니다.</p>
+                    <br>
+                    <p class="activity-text">대학병원 수퍼바이저 출신 현직 교수들의 전문적인 수퍼비전으로 실무 역량을 키워갑니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-right">
+            <div class="hero-image">👥</div>
+            <h1 class="main-heading">GET OUR<br><span class="highlight">SCHOOL</span></h1>
+            <h2 class="main-subheading">OF PSYCHOLOGY</h2>
+            <p class="description">상담의 기본 역량을 갖출 수 있도록<br>실제적인 내용을 다루는<br>전문 교육 프로그램</p>
+            <div class="courses-section">
+                <h2>과정 선택</h2>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <h3>기본과정</h3>
+                        <div class="price">120만원</div>
+                        <p style="color: #0047AB; font-weight: 700; font-size: 1.05em;">✓ 상시 등록 가능</p>
+                        <ul class="course-features">
+                            <li>📚 이론 교육 (월 1회)</li>
+                            <li>상담실제</li>
+                            <li>정신병리</li>
+                            <li>심리평가</li>
+                            <li>👀 수퍼비전 참관</li>
+                        </ul>
+                    </div>
+                    <div class="course-card advanced">
+                        <h3>심화과정 ⭐</h3>
+                        <div class="price">240만원</div>
+                        <p class="note">⚠️ 15명 제한</p>
+                        <ul class="course-features">
+                            <li>📚 기본과정 포함</li>
+                            <li>🎯 상담 실습</li>
+                            <li>🧠 검사 실습</li>
+                            <li>📝 보고서 작성</li>
+                            <li>✅ 수퍼비전</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-section">
+                <h3 class="feature-title">수료 혜택 (심화과정)</h3>
+                <ul class="feature-list">
+                    <li>임상심리사 수련 1년 인정</li>
+                    <li>과정 중 워크샵 50% 할인</li>
+                    <li>수료 후 3년간 워크샵 30% 할인</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="full-section">
+        <h2 class="section-heading">아카데미 특징</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>💡 모의환자 활용</h3>
+                <p>표준화된 모의환자 대상 상담 실습으로 윤리적 문제 최소화</p>
+            </div>
+            <div class="feature-box">
+                <h3>🎯 체계적 훈련</h3>
+                <p>초기면접, 상담구조화, 사례개념화 등 단계별 실습</p>
+            </div>
+            <div class="feature-box">
+                <h3>📊 종합 평가</h3>
+                <p>WAIS, WISC, MMPI-2, SCT, HTP 등 실시 및 해석</p>
+            </div>
+            <div class="feature-box">
+                <h3>👨‍🏫 전문 수퍼비전</h3>
+                <p>대학병원 출신 현직 교수진의 수퍼비전</p>
+            </div>
+        </div>
+        <h2 class="section-heading">수퍼바이저 & 자문교수</h2>
+        <div class="advisors-grid">
+            <div class="advisor-box">
+                <h4>신민경 (수퍼바이저)</h4>
+                <p>충남대 심리학과 박사수료<br>임상심리전문가</p>
+            </div>
+            <div class="advisor-box">
+                <h4>정임숙 (수퍼바이저)</h4>
+                <p>경기대 범죄심리학과 박사수료<br>산업인력공단 임상심리사1급</p>
+            </div>
+            <div class="advisor-box">
+                <h4>한덕현</h4>
+                <p>중앙대병원 정신건강의학과 교수<br>정신과전문의</p>
+            </div>
+            <div class="advisor-box">
+                <h4>김선미</h4>
+                <p>중앙대병원 정신건강의학과 교수<br>정신과전문의</p>
+            </div>
+            <div class="advisor-box">
+                <h4>유은승</h4>
+                <p>고려사이버대 상담심리학과 교수<br>前 국립암센터 수퍼바이저</p>
+            </div>
+            <div class="advisor-box">
+                <h4>박수미</h4>
+                <p>한남대 상담심리학과 교수<br>前 고대구로병원 수퍼바이저</p>
+            </div>
+        </div>
+        <h2 class="section-heading">이론 교육 일정</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">일자</th>
+                    <th style="width: 50%;">주제</th>
+                    <th style="width: 35%;">강사</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+        </table>
+        <p style="margin-top: 25px; color: #666; font-style: italic; text-align: center; font-size: 1.1em; font-weight: 600;">* 학회 등의 일정으로 강의 순서나 강사는 변경될 수 있습니다.</p>
+        <div class="note-box">
+            <strong>※ 주의사항</strong>
+            <p>본 과정은 특정 자격증 시험 대비를 위한 문제 풀이 과정이 아닙니다.</p>
+            <p>상담의 기본 역량을 갖출 수 있도록 실제적인 내용을 다룹니다.</p>
+            <p>수료 기준: 90% 이상 참석</p>
+        </div>
+        <div class="location-box">
+            <h3>📍 <span id="orgFooter">휴딧심리연구소</span> 위치</h3>
+            <p id="addressFooter">서울시 동작구 흑석동 341<br>아크로리버힐 101동 상가 34호</p>
+        </div>
+    </div>
+    <script>
+        const defaultContact = {
+            organization: "휴딧심리연구소",
+            programTitle: "심리아카데미 1기 모집",
+            phone: "070-8838-3877",
+            address: "서울시 동작구 흑석동 341 아크로리버힐 101동 상가 34호",
+            email: "hudit@hudit.co.kr",
+            website: "www.hudit.co.kr"
+        };
+
+        const defaultSchedule = [
+            {date:"'25.10.18",topics:[{title:"[상담실제1] 상담의 기본 기법",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[상담실제2] 접수면접과 초기면담",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[심리평가1] 행동관찰(MSE) 및 정신병리 주요 용어",instructor:"정임숙 (경기대 범죄심리학과 박사수료)"}]},
+            {date:"'25.11.15",topics:[{title:"[상담실제3] 정신분석치료",instructor:"미정"},{title:"[정신병리1] 조현병 스펙트럼",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리2] 우울장애 및 양극성 장애",instructor:"최승원 (덕성여대 심리학과 교수)"}]},
+            {date:"'25.12.20",topics:[{title:"[상담실제4] 인본주의치료",instructor:"구훈정 (한신대 심리아동학부 교수)"},{title:"[정신병리3] 불안장애",instructor:"안정광 (충북대 심리학과 교수)"},{title:"[정신병리4] 강박 및 관련장애, 외상 및 스트레스 장애",instructor:"유은승 (고려사이버대 상담심리학과 교수)"}]},
+            {date:"'26.1.17",topics:[{title:"[정신병리5] 정신병리의 생물학적 기전과 약물치료",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리6] 해리장애, 신체증상 및 관련장애",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리7] 성격장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"}]},
+            {date:"'26.2.21",topics:[{title:"[정신병리8] ADHD, 자폐스펙트럼장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[정신병리9] 파괴적, 충동조절 및 품행 장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[정신병리10] 신경인지장애",instructor:"신민경 (휴딧심리연구소 임상심리전문가)"}]},
+            {date:"'26.3.21",topics:[{title:"[정신병리11] 물질관련 및 중독장애",instructor:"한덕현 (중앙대병원 정신건강의학과 교수)"},{title:"[심리평가2] 성인 지능검사(WAIS-IV)의 실시",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가3] 아동 지능검사(WISC-V)의 실시",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.4.18",topics:[{title:"[심리평가4] 지능검사의 채점 및 해석",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가5] 투사 검사(1): 로르샤하 검사",instructor:"구훈정 (한신대 심리아동학부 교수)"},{title:"[심리평가6] 투사 검사(2): TAT, 문장완성검사",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.5.16",topics:[{title:"[심리평가7] 그림검사: HTP, KFD 실시와 해석",instructor:"최은경 (은평성모병원 정신건강의학과 임상심리전문가)"},{title:"[심리평가8] BGT: 실시, 채점 및 해석",instructor:"최은경 (은평성모병원 정신건강의학과 임상심리전문가)"},{title:"[상담실제5] 동기강화상담",instructor:"이정임 (서울상담심리대학원대학교 교수)"}]},
+            {date:"'26.6.20",topics:[{title:"[심리평가10] MMPI-2 검사의 이해",instructor:"성태훈 (지우심리상담센터 원장)"},{title:"[심리평가11] MMPI-2 해석의 기초",instructor:"성태훈 (지우심리상담센터 원장)"},{title:"[심리평가12] MMPI-2 해석 실습",instructor:"성태훈 (지우심리상담센터 원장)"}]},
+            {date:"'26.7.18",topics:[{title:"[심리평가13] 기질 및 성격검사(TCI)",instructor:"구훈정 (성신여대 심리학과 교수)"},{title:"[상담실제6] 인지행동치료의 이론과 실제",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[상담실제7] 인지행동치료의 적용",instructor:"유은승 (고려사이버대 상담심리학과 교수)"}]},
+            {date:"'26.8.8",topics:[{title:"[상담실제8] 행동활성화 치료",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[심리평가14] 신경인지기능과 신경심리검사",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가15] 치매검사: MMSE, CDR, GDS, CERAD",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.9.19",topics:[{title:"[상담실제9] 변증법적치료(DBT)",instructor:"구훈정 (성신여대 심리학과 교수)"},{title:"[상담실제10] 자살 및 자해 상담",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[심리평가16] 심리평가보고서 작성법",instructor:"성태훈 (지우심리상담센터 원장)"}]}
+        ];
+
+        async function loadData() {
+            await loadContactInfo();
+            await loadScheduleData();
+        }
+
+        async function loadContactInfo() {
+            try {
+                const response = await fetch('contact-info.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderContactInfo(data);
+                } else {
+                    renderContactInfo(defaultContact);
+                }
+            } catch (error) {
+                renderContactInfo(defaultContact);
+            }
+        }
+
+        function renderContactInfo(data) {
+            document.getElementById('orgName').textContent = data.organization;
+            document.getElementById('programName').textContent = data.programTitle;
+            document.getElementById('phoneNum').textContent = data.phone;
+            const addressWithBreak = data.address.replace('341 ', '341<br>');
+            document.getElementById('addressText').innerHTML = addressWithBreak;
+            document.getElementById('emailText').textContent = data.email;
+            document.getElementById('websiteText').textContent = data.website;
+            document.getElementById('orgFooter').textContent = data.organization;
+            document.getElementById('addressFooter').innerHTML = addressWithBreak;
+        }
+
+        async function loadScheduleData() {
+            try {
+                const response = await fetch('schedule-data.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderSchedule(data);
+                    return;
+                }
+            } catch (error) {
+                console.log('기본 데이터 사용');
+            }
+            renderSchedule(defaultSchedule);
+        }
+
+        function renderSchedule(data) {
+            const tbody = document.getElementById('scheduleBody');
+            tbody.innerHTML = '';
+            data.forEach((session) => {
+                session.topics.forEach((topic, topicIndex) => {
+                    const row = document.createElement('tr');
+                    if (topicIndex === 0) {
+                        const dateCell = document.createElement('td');
+                        dateCell.textContent = session.date;
+                        dateCell.rowSpan = session.topics.length;
+                        dateCell.className = 'date-cell';
+                        row.appendChild(dateCell);
+                    }
+                    const topicCell = document.createElement('td');
+                    topicCell.textContent = topic.title;
+                    topicCell.style.fontWeight = '600';
+                    topicCell.style.color = '#333';
+                    row.appendChild(topicCell);
+                    const instructorCell = document.createElement('td');
+                    instructorCell.className = 'instructor-cell';
+                    instructorCell.textContent = topic.instructor;
+                    row.appendChild(instructorCell);
+                    tbody.appendChild(row);
+                });
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
