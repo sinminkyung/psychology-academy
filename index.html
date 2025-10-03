@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴딧심리연구소 심리아카데미 1기 모집</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            line-height: 1.6; 
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0055cc 0%, #003d99 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(186, 220, 88, 0.15);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .hero::after {
+            content: '• • • •\A• • • •\A• • • •';
+            white-space: pre;
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: rgba(255,255,255,0.2);
+            font-size: 1.5em;
+            line-height: 1.5;
+        }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            background: #badc58;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+        .hero h1 {
+            font-size: 3.2em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+        .hero .subtitle {
+            font-size: 1.8em;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            padding: 30px 50px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .stat-number {
+            font-size: 3em;
+            font-weight: 900;
+            display: block;
+            color: #badc58;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-top: 5px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .section::before {
+            content: '• • • •\A• • • •\A• • • •';
+            white-space: pre;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: rgba(0,85,204,0.05);
+            font-size: 1.5em;
+            line-height: 1.5;
+        }
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #0055cc;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 5px solid #badc58;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Target List */
+        .target-list {
+            list-style: none;
+            display: grid;
+            gap: 20px;
+        }
+        .target-item {
+            background: linear-gradient(135deg, #f0f5ff 0%, white 100%);
+            padding: 25px 25px 25px 65px;
+            border-radius: 12px;
+            border-left: 5px solid #0055cc;
+            font-weight: 600;
+            font-size: 1.1em;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .target-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,85,204,0.15);
+        }
+        .target-item::before {
+            content: '✓';
+            position: absolute;
+            left: 25px;
+            color: #badc58;
+            font-size: 1.8em;
+            font-weight: 900;
+        }
+
+        /* Course Cards */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
+            margin: 40px 0;
+        }
+        .course-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+            border-radius: 20px;
+            padding: 45px;
+            border: 4px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0,85,204,0.08) 0%, transparent 70%);
+            transform: translate(30%, -30%);
+        }
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,85,204,0.2);
+            border-color: #0055cc;
+        }
+        .course-card.premium {
+            background: linear-gradient(135deg, #0055cc 0%, #003d99 100%);
+            color: white;
+            border-color: #003d99;
+        }
+        .course-card.premium::before {
+            background: radial-gradient(circle, rgba(186,220,88,0.2) 0%, transparent 70%);
+        }
+        .course-badge {
+            display: inline-block;
+            background: #badc58;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.95em;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .course-title {
+            font-size: 2.2em;
+            font-weight: 900;
+            color: #0055cc;
+            margin-bottom: 20px;
+        }
+        .course-card.premium .course-title {
+            color: white;
+        }
+        .course-price {
+            font-size: 3.2em;
+            font-weight: 900;
+            color: #badc58;
+            margin: 25px 0;
+        }
+        .course-note {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        .course-note.available {
+            color: #28a745;
+        }
+        .course-note.limited {
+            color: #dc3545;
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        .feature-item {
+            padding: 16px 0;
+            padding-left: 40px;
+            position: relative;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .course-card.premium .feature-item {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        .feature-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-size: 1.6em;
+            font-weight: 900;
+        }
+        .course-card.premium .feature-item::before {
+            color: #badc58;
+        }
+
+        /* Info Box */
+        .info-highlight {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e3f2fd 100%);
+            border-left: 6px solid #0055cc;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+        }
+        .info-highlight p {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 2;
+            margin: 8px 0;
+        }
+        .info-highlight strong {
+            color: #0055cc;
+            font-weight: 800;
+        }
+
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .benefit-card {
+            background: linear-gradient(135deg, #0055cc 0%, #003d99 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 18px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-8px);
+        }
+        .benefit-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        .benefit-text {
+            font-size: 1.3em;
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .feature-box {
+            background: linear-gradient(135deg, #f0f5ff 0%, white 100%);
+            padding: 40px;
+            border-radius: 18px;
+            border-left: 6px solid #0055cc;
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 35px rgba(0,85,204,0.15);
+        }
+        .feature-box h3 {
+            color: #0055cc;
+            font-size: 1.7em;
+            margin-bottom: 18px;
+            font-weight: 900;
+        }
+        .feature-box p {
+            color: #333;
+            line-height: 1.8;
+            font-weight: 500;
+            font-size: 1.05em;
+        }
+
+        /* Professors */
+        .professors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .professor-card {
+            background: linear-gradient(135deg, #f0f5ff 0%, white 100%);
+            padding: 35px;
+            border-radius: 18px;
+            border-top: 5px solid #badc58;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .professor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,85,204,0.15);
+        }
+        .professor-name {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #0055cc;
+            margin-bottom: 12px;
+        }
+        .professor-title {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Schedule */
+        .schedule-wrapper {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            min-width: 900px;
+        }
+        .schedule-table thead {
+            background: linear-gradient(135deg, #0055cc 0%, #003d99 100%);
+            color: white;
+        }
+        .schedule-table th {
+            padding: 22px 18px;
+            text-align: left;
+            font-weight: 900;
+            font-size: 1.15em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .schedule-table th:first-child { border-radius: 20px 0 0 0; }
+        .schedule-table th:last-child { border-radius: 0 20px 0 0; }
+        .schedule-table td {
+            padding: 20px 18px;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        .schedule-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .date-cell {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            font-weight: 900;
+            color: #1976d2;
+            font-size: 1.1em;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .topic-cell {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .instructor-cell {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Note Box */
+        .note-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+            border-left: 6px solid #ffc107;
+            padding: 35px;
+            border-radius: 18px;
+            margin: 40px 0;
+        }
+        .note-box-title {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #856404;
+            margin-bottom: 18px;
+        }
+        .note-box p {
+            color: #856404;
+            margin: 12px 0;
+            line-height: 1.8;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .contact-card {
+            background: linear-gradient(135deg, #f0f5ff 0%, white 100%);
+            padding: 40px;
+            border-radius: 18px;
+            text-align: center;
+            border: 3px solid #e3f2fd;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            border-color: #0055cc;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,85,204,0.2);
+        }
+        .contact-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #0055cc;
+        }
+        .contact-label {
+            font-weight: 800;
+            color: #0055cc;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .contact-value {
+            color: #333;
+            font-weight: 600;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #0055cc 0%, #003d99 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(186, 220, 88, 0.15);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .cta-title {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-text {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-tagline {
+            font-size: 1.3em;
+            font-weight: 300;
+            font-style: italic;
+            color: #badc58;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 2.2em; }
+            .hero .subtitle { font-size: 1.3em; }
+            .hero-stats { gap: 25px; }
+            .stat-item { padding: 20px 35px; }
+            .stat-number { font-size: 2.2em; }
+            .container { padding: 50px 15px; }
+            .section { padding: 40px 25px; }
+            .section-title { font-size: 2em; }
+            .course-grid { grid-template-columns: 1fr; }
+            .course-card { padding: 35px 25px; }
+            .course-title { font-size: 1.8em; }
+            .course-price { font-size: 2.5em; }
+            .schedule-table th,
+            .schedule-table td { 
+                padding: 14px 12px; 
+                font-size: 0.9em;
+            }
+            .cta-title { font-size: 2.2em; }
+            .cta-text { font-size: 1.2em; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 50px 15px; }
+            .hero h1 { font-size: 1.8em; }
+            .logo-icon { width: 70px; height: 70px; font-size: 35px; }
+            .section { padding: 30px 20px; }
+            .section-title { font-size: 1.7em; }
+            .course-card { padding: 30px 20px; }
+            .feature-box, .professor-card, .contact-card { padding: 30px 20px; }
+            .schedule-table th,
+            .schedule-table td { 
+                padding: 12px 8px; 
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="logo-icon">🧠</div>
+            <h1 id="orgName">휴딧심리연구소</h1>
+            <p class="subtitle" id="programName">심리아카데미 1기 모집</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1년</span>
+                    <span class="stat-label">체계적 교육과정</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">월 1회</span>
+                    <span class="stat-label">실전 중심 교육</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15명</span>
+                    <span class="stat-label">심화과정 정원</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 모집 대상 -->
+        <div class="section">
+            <h2 class="section-title">📋 모집 대상</h2>
+            <ul class="target-list">
+                <li class="target-item">임상심리사, 전문상담사, 상담심리학사, 청소년 상담사 등 자격증 준비자</li>
+                <li class="target-item">상담 관련 업무 종사자</li>
+                <li class="target-item">예술심리치료 자격증 준비자 및 종사자</li>
+            </ul>
+        </div>
+
+        <!-- 과정 안내 -->
+        <div class="section">
+            <h2 class="section-title">📚 과정 안내</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3 class="course-title">기본과정</h3>
+                    <div class="course-price">120만원</div>
+                    <div class="course-note available">✓ 상시 등록 가능</div>
+                    <ul class="feature-list">
+                        <li class="feature-item">이론 교육 (월 1회, 셋째주 토요일)</li>
+                        <li class="feature-item">상담실제 / 정신병리 / 심리평가</li>
+                        <li class="feature-item">수퍼비전 참관</li>
+                        <li class="feature-item">온라인 실시간 Zoom</li>
+                    </ul>
+                </div>
+                <div class="course-card premium">
+                    <span class="course-badge">⭐ PREMIUM</span>
+                    <h3 class="course-title">심화과정</h3>
+                    <div class="course-price">240만원</div>
+                    <div class="course-note limited">⚠️ 15명 정원 제한</div>
+                    <ul class="feature-list">
+                        <li class="feature-item">기본과정 전체 포함</li>
+                        <li class="feature-item">심리상담 실습 (1사례, 6회)</li>
+                        <li class="feature-item">지능검사 및 투사검사 실습</li>
+                        <li class="feature-item">심리평가 보고서 작성 실습</li>
+                        <li class="feature-item">전문 수퍼비전</li>
+                        <li class="feature-item">과정생 북리딩 (4권)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-highlight">
+                <p><strong>📅 기간:</strong> 2025년 10월 1일 ~ 2026년 9월 30일 (1년)</p>
+                <p><strong>⏰ 시간:</strong> 셋째주 토요일, 10:00 ~ 17:00</p>
+                <p><strong>🎓 수료기준:</strong> 90% 이상 참석</p>
+            </div>
+        </div>
+
+        <!-- 수료 혜택 -->
+        <div class="section">
+            <h2 class="section-title">🎁 수료 혜택 (심화과정)</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📜</div>
+                    <div class="benefit-text">임상심리사 수련<br>1년 인정</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-text">과정 중<br>워크샵 50% 할인</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-text">수료 후 3년간<br>워크샵 30% 할인</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 아카데미 특징 -->
+        <div class="section">
+            <h2 class="section-title">✨ 아카데미 특징</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>💡 모의환자 활용</h3>
+                    <p>표준화된 모의환자 대상 상담 실습으로 윤리적 문제 최소화 및 체계적 훈련 가능</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🎯 체계적 훈련</h3>
+                    <p>초기면접, 상담구조화, 사례개념화 등 단계별 실습 과정 제공</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📊 종합 평가</h3>
+                    <p>WAIS, WISC, MMPI-2, SCT, HTP 등 실시, 채점 및 해석 실습</p>
+                </div>
+                <div class="feature-box">
+                    <h3>👨‍🏫 전문 수퍼비전</h3>
+                    <p>대학병원 출신 현직 교수진의 전문적인 수퍼비전 제공</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 수퍼바이저 & 자문교수 -->
+        <div class="section">
+            <h2 class="section-title">👥 수퍼바이저 & 자문교수</h2>
+            <div class="professors-grid">
+                <div class="professor-card">
+                    <div class="professor-name">신민경</div>
+                    <div class="professor-title">충남대 심리학과 박사수료<br>임상심리전문가</div>
+                </div>
+                <div class="professor-card">
+                    <div class="professor-name">정임숙</div>
+                    <div class="professor-title">경기대 범죄심리학과 박사수료<br>임상심리사1급</div>
+                </div>
+                <div class="professor-card">
+                    <div class="professor-name">한덕현</div>
+                    <div class="professor-title">중앙대병원 정신건강의학과 교수<br>정신과전문의</div>
+                </div>
+                <div class="professor-card">
+                    <div class="professor-name">김선미</div>
+                    <div class="professor-title">중앙대병원 정신건강의학과 교수<br>정신과전문의</div>
+                </div>
+                <div class="professor-card">
+                    <div class="professor-name">유은승</div>
+                    <div class="professor-title">고려사이버대 상담심리학과 교수<br>前 국립암센터 수퍼바이저</div>
+                </div>
+                <div class="professor-card">
+                    <div class="professor-name">박수미</div>
+                    <div class="professor-title">한남대 상담심리학과 교수<br>前 고대구로병원 수퍼바이저</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 이론 교육 일정 -->
+        <div class="section">
+            <h2 class="section-title">📅 이론 교육 일정</h2>
+            <div class="schedule-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 90px;">일자</th>
+                            <th style="width: 50%;">주제</th>
+                            <th style="width: 35%;">강사</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody"></tbody>
+                </table>
+            </div>
+            <p style="margin-top: 25px; color: #666; font-style: italic; text-align: center; font-weight: 500;">
+                * 학회 등의 일정으로 강의 순서나 강사는 변경될 수 있습니다.
+            </p>
+        </div>
+
+        <!-- 주의사항 -->
+        <div class="note-box">
+            <div class="note-box-title">⚠️ 주의사항</div>
+            <p>본 과정은 특정 자격증 시험 대비를 위한 문제 풀이 과정이 아닙니다.</p>
+            <p>상담의 기본 역량을 갖출 수 있도록 실제적인 내용을 다룹니다.</p>
+            <p>10명 이하 시 개설이 연기될 수 있습니다.</p>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="section">
+            <h2 class="section-title">📞 문의 정보</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">전화</div>
+                    <div class="contact-value" id="phoneNum">070-8838-3877</div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">이메일</div>
+                    <div class="contact-value" id="emailText">hudit@hudit.co.kr</div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-label">웹사이트</div>
+                    <div class="contact-value" id="websiteText">www.hudit.co.kr</div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">위치</div>
+                    <div class="contact-value" id="addressText">서울시 동작구 흑석동 341<br>아크로리버힐 101동 상가 34호</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2 class="cta-title">심리 전문가로의 첫 걸음</h2>
+            <p class="cta-text">체계적인 교육과 실습으로 여러분의 성장을 응원합니다</p>
+            <p class="cta-tagline">The Best Place For Learning</p>
+        </div>
+    </div>
+
+    <script>
+        const defaultSchedule = [
+            {date:"'25.10.18",topics:[{title:"[상담실제1] 상담의 기본 기법",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[상담실제2] 접수면접과 초기면담",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[심리평가1] 행동관찰(MSE) 및 정신병리 주요 용어",instructor:"정임숙 (경기대 범죄심리학과 박사수료)"}]},
+            {date:"'25.11.15",topics:[{title:"[상담실제3] 정신분석치료",instructor:"미정"},{title:"[정신병리1] 조현병 스펙트럼",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리2] 우울장애 및 양극성 장애",instructor:"최승원 (덕성여대 심리학과 교수)"}]},
+            {date:"'25.12.20",topics:[{title:"[상담실제4] 인본주의치료",instructor:"구훈정 (한신대 심리아동학부 교수)"},{title:"[정신병리3] 불안장애",instructor:"안정광 (충북대 심리학과 교수)"},{title:"[정신병리4] 강박 및 관련장애, 외상 및 스트레스 장애",instructor:"유은승 (고려사이버대 상담심리학과 교수)"}]},
+            {date:"'26.1.17",topics:[{title:"[정신병리5] 정신병리의 생물학적 기전과 약물치료",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리6] 해리장애, 신체증상 및 관련장애",instructor:"김선미 (중앙대병원 정신건강의학과 교수)"},{title:"[정신병리7] 성격장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"}]},
+            {date:"'26.2.21",topics:[{title:"[정신병리8] ADHD, 자폐스펙트럼장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[정신병리9] 파괴적, 충동조절 및 품행 장애",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[정신병리10] 신경인지장애",instructor:"신민경 (휴딧심리연구소 임상심리전문가)"}]},
+            {date:"'26.3.21",topics:[{title:"[정신병리11] 물질관련 및 중독장애",instructor:"한덕현 (중앙대병원 정신건강의학과 교수)"},{title:"[심리평가2] 성인 지능검사(WAIS-IV)의 실시",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가3] 아동 지능검사(WISC-V)의 실시",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.4.18",topics:[{title:"[심리평가4] 지능검사의 채점 및 해석",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가5] 투사 검사(1): 로르샤하 검사",instructor:"구훈정 (한신대 심리아동학부 교수)"},{title:"[심리평가6] 투사 검사(2): TAT, 문장완성검사",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.5.16",topics:[{title:"[심리평가7] 그림검사: HTP, KFD 실시와 해석",instructor:"최은경 (은평성모병원 정신건강의학과 임상심리전문가)"},{title:"[심리평가8] BGT: 실시, 채점 및 해석",instructor:"최은경 (은평성모병원 정신건강의학과 임상심리전문가)"},{title:"[상담실제5] 동기강화상담",instructor:"이정임 (서울상담심리대학원대학교 교수)"}]},
+            {date:"'26.6.20",topics:[{title:"[심리평가10] MMPI-2 검사의 이해",instructor:"성태훈 (지우심리상담센터 원장)"},{title:"[심리평가11] MMPI-2 해석의 기초",instructor:"성태훈 (지우심리상담센터 원장)"},{title:"[심리평가12] MMPI-2 해석 실습",instructor:"성태훈 (지우심리상담센터 원장)"}]},
+            {date:"'26.7.18",topics:[{title:"[심리평가13] 기질 및 성격검사(TCI)",instructor:"구훈정 (성신여대 심리학과 교수)"},{title:"[상담실제6] 인지행동치료의 이론과 실제",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[상담실제7] 인지행동치료의 적용",instructor:"유은승 (고려사이버대 상담심리학과 교수)"}]},
+            {date:"'26.8.8",topics:[{title:"[상담실제8] 행동활성화 치료",instructor:"유은승 (고려사이버대 상담심리학과 교수)"},{title:"[심리평가14] 신경인지기능과 신경심리검사",instructor:"박수미 (한남대 상담심리학과 교수)"},{title:"[심리평가15] 치매검사: MMSE, CDR, GDS, CERAD",instructor:"박수미 (한남대 상담심리학과 교수)"}]},
+            {date:"'26.9.19",topics:[{title:"[상담실제9] 변증법적치료(DBT)",instructor:"구훈정 (성신여대 심리학과 교수)"},{title:"[상담실제10] 자살 및 자해 상담",instructor:"이상하 (아주대 정신건강의학과 연구교수)"},{title:"[심리평가16] 심리평가보고서 작성법",instructor:"성태훈 (지우심리상담센터 원장)"}]}
+        ];
+
+        const defaultContact = {
+            organization: "휴딧심리연구소",
+            programTitle: "심리아카데미 1기 모집",
+            phone: "070-8838-3877",
+            address: "서울시 동작구 흑석동 341 아크로리버힐 101동 상가 34호",
+            email: "hudit@hudit.co.kr",
+            website: "www.hudit.co.kr"
+        };
+
+        async function loadData() {
+            await loadContactInfo();
+            await loadScheduleData();
+        }
+
+        async function loadContactInfo() {
+            try {
+                const response = await fetch('contact-info.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderContactInfo(data);
+                } else {
+                    renderContactInfo(defaultContact);
+                }
+            } catch (error) {
+                renderContactInfo(defaultContact);
+            }
+        }
+
+        function renderContactInfo(data) {
+            if (data.organization) {
+                document.getElementById('orgName').textContent = data.organization;
+            }
+            if (data.programTitle) {
+                document.getElementById('programName').textContent = data.programTitle;
+            }
+            if (data.phone) {
+                document.getElementById('phoneNum').textContent = data.phone;
+            }
+            if (data.address) {
+                const addressWithBreak = data.address.replace('341 ', '341<br>');
+                document.getElementById('addressText').innerHTML = addressWithBreak;
+            }
+            if (data.email) {
+                document.getElementById('emailText').textContent = data.email;
+            }
+            if (data.website) {
+                document.getElementById('websiteText').textContent = data.website;
+            }
+        }
+
+        async function loadScheduleData() {
+            try {
+                const response = await fetch('schedule-data.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderSchedule(data);
+                    return;
+                }
+            } catch (error) {
+                console.log('기본 데이터 사용');
+            }
+            renderSchedule(defaultSchedule);
+        }
+
+        function renderSchedule(data) {
+            const tbody = document.getElementById('scheduleBody');
+            tbody.innerHTML = '';
+            data.forEach((session) => {
+                session.topics.forEach((topic, topicIndex) => {
+                    const row = document.createElement('tr');
+                    if (topicIndex === 0) {
+                        const dateCell = document.createElement('td');
+                        dateCell.textContent = session.date;
+                        dateCell.rowSpan = session.topics.length;
+                        dateCell.className = 'date-cell';
+                        row.appendChild(dateCell);
+                    }
+                    const topicCell = document.createElement('td');
+                    topicCell.textContent = topic.title;
+                    topicCell.className = 'topic-cell';
+                    row.appendChild(topicCell);
+                    const instructorCell = document.createElement('td');
+                    instructorCell.className = 'instructor-cell';
+                    instructorCell.textContent = topic.instructor;
+                    row.appendChild(instructorCell);
+                    tbody.appendChild(row);
+                });
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
